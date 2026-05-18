@@ -1,0 +1,152 @@
+.ce-section {
+  margin: auto;
+  padding: 120px 0px;
+  position: relative;
+}
+.ce-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.ce-section h2 {
+  font-size: 70px;
+  line-height: 70px;
+  font-weight: 400;
+  text-align: center;
+  background: linear-gradient(0deg, #7f40ff, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+.ce-section h2 > span {
+  font-family: "Geist", sans-serif;
+  font-weight: 300;
+}
+.ce-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.ce-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 40px 30px;
+  border-radius: 20px;
+  position: relative;
+  overflow: visible;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+.ce-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(170, 66, 255, 0.4);
+  transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(170, 66, 255, 0.2);
+  z-index: 2;
+}
+.ce-card h3, .ce-card p, .ce-icon-wrap {
+  transform: translateZ(20px);
+  transition: transform 0.5s;
+}
+.ce-card:hover h3, .ce-card:hover p, .ce-card:hover .ce-icon-wrap {
+  transform: translateZ(40px);
+}
+.ce-card:hover .ce-pulse {
+  animation: cePulse 1.5s infinite;
+}
+.ce-card:hover .ce-scan-line {
+  animation: ceScan 2s linear infinite;
+}
+.ce-icon-wrap {
+  position: relative;
+  font-size: 24px;
+  color: var(--accentColor);
+  margin-bottom: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(170, 66, 255, 0.1);
+}
+.ce-pulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 14px;
+  border: 1px solid rgba(170, 66, 255, 0.3);
+  opacity: 0;
+}
+@keyframes cePulse {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}
+.ce-scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accentColor), transparent);
+  opacity: 0;
+}
+@keyframes ceScan {
+  0% {
+    top: 0;
+    opacity: 0.4;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+.ce-card h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 10px;
+  letter-spacing: 0.3px;
+}
+.ce-card p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #777;
+  margin: 0;
+}
+
+@media only screen and (max-width: 1400px) {
+  .ce-section h2 {
+    font-size: 50px;
+    line-height: 50px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .ce-section {
+    padding: 70px 0px;
+  }
+  .ce-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .ce-section h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-top: 0px;
+  }
+  .ce-grid {
+    grid-template-columns: 1fr;
+  }
+}

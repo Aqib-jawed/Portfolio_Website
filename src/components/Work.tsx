@@ -1,51 +1,88 @@
-import "./styles/Work.css";
-import WorkImage from "./WorkImage";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import "./styles/Work.css";
+import WorkImage from "./WorkImage";
 
 gsap.registerPlugin(useGSAP);
 
+const projects = [
+  {
+    num: "01",
+    name: "Civic Connect",
+    category: "Civic-Tech Platform",
+    tools: "React, TypeScript, Supabase, PostgreSQL, Tailwind CSS",
+    description:
+      "Full-stack civic platform enabling real-time city issue reporting with RBAC, Row Level Security, optimized relational queries, and scalable database architecture.",
+    image: "/images/project-civic.webp",
+    link: "https://civic-connect-webapp.vercel.app/",
+    github: "https://github.com/Akki-Aqib/Civic-Connect",
+  },
+  {
+    num: "02",
+    name: "EduNet",
+    category: "AI Education Platform",
+    tools: "Next.js, OpenAI API, Python, FastAPI, Supabase, Tailwind CSS",
+    description:
+      "AI-powered educational platform integrating OpenAI APIs with FastAPI microservices for intelligent doubt resolution — SSR, async handling, and rate limiting.",
+    image: "/images/project-edunet.webp",
+    link: "https://progrex-campus.vercel.app/",
+    github: "https://github.com/Akki-Aqib/progrex-campus",
+  },
+  {
+    num: "03",
+    name: "Smart Payment Dashboard",
+    category: "Finance Analytics",
+    tools: "React.js, Node.js, Express.js, MongoDB, Chart.js, JWT",
+    description:
+      "MERN-stack fintech dashboard with JWT auth, optimized MongoDB queries, and modular REST APIs for secure transaction tracking and financial visualization.",
+    image: "/images/project-payment.webp",
+    link: "https://smartpaymentdashboard.vercel.app/",
+    github: "https://github.com/Akki-Aqib/Smart-Payment-Dashboard",
+  },
+];
+
 const Work = () => {
   useGSAP(() => {
-  let translateX: number = 0;
+    let translateX: number = 0;
 
-  function setTranslateX() {
-    const box = document.getElementsByClassName("work-box");
-    const rectLeft = document
-      .querySelector(".work-container")!
-      .getBoundingClientRect().left;
-    const rect = box[0].getBoundingClientRect();
-    const parentWidth = box[0].parentElement!.getBoundingClientRect().width;
-    let padding: number =
-      parseInt(window.getComputedStyle(box[0]).padding) / 2;
-    translateX = rect.width * box.length - (rectLeft + parentWidth) + padding;
-  }
+    function setTranslateX() {
+      const box = document.getElementsByClassName("work-box");
+      const rectLeft = document
+        .querySelector(".work-container")!
+        .getBoundingClientRect().left;
+      const rect = box[0].getBoundingClientRect();
+      const parentWidth = box[0].parentElement!.getBoundingClientRect().width;
+      let padding: number =
+        parseInt(window.getComputedStyle(box[0]).padding) / 2;
+      translateX = rect.width * box.length - (rectLeft + parentWidth) + padding;
+    }
 
-  setTranslateX();
+    setTranslateX();
 
-  let timeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".work-section",
-      start: "top top",
-      end: `+=${translateX}`, // Use actual scroll width
-      scrub: true,
-      pin: true,
-      id: "work",
-    },
-  });
+    let timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".work-section",
+        start: "top top",
+        end: `+=${translateX}`,
+        scrub: true,
+        pin: true,
+        id: "work",
+      },
+    });
 
-  timeline.to(".work-flex", {
-    x: -translateX,
-    ease: "none",
-  });
+    timeline.to(".work-flex", {
+      x: -translateX,
+      ease: "none",
+    });
 
-  // Clean up (optional, good practice)
-  return () => {
-    timeline.kill();
-    ScrollTrigger.getById("work")?.kill();
-  };
-}, []);
+    return () => {
+      timeline.kill();
+      ScrollTrigger.getById("work")?.kill();
+    };
+  }, []);
+
   return (
     <div className="work-section" id="work">
       <div className="work-container section-container">
@@ -53,21 +90,26 @@ const Work = () => {
           My <span>Work</span>
         </h2>
         <div className="work-flex">
-          {[...Array(6)].map((_value, index) => (
+          {projects.map((project, index) => (
             <div className="work-box" key={index}>
               <div className="work-info">
                 <div className="work-title">
-                  <h3>0{index + 1}</h3>
-
+                  <h3>{project.num}</h3>
                   <div>
-                    <h4>Project Name</h4>
-                    <p>Category</p>
+                    <h4>{project.name}</h4>
+                    <p>{project.category}</p>
                   </div>
                 </div>
-                <h4>Tools and features</h4>
-                <p>Javascript, TypeScript, React, Threejs</p>
+                <h4>Tech Stack</h4>
+                <p>{project.tools}</p>
+                <p className="work-desc">{project.description}</p>
               </div>
-              <WorkImage image="/images/placeholder.webp" alt="" />
+              <WorkImage
+                image={project.image}
+                alt={project.name}
+                link={project.link}
+                github={project.github}
+              />
             </div>
           ))}
         </div>

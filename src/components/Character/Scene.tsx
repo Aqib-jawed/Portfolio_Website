@@ -12,6 +12,11 @@ import {
 } from "./utils/mouseUtils";
 import setAnimations from "./utils/animationUtils";
 import { setProgress } from "../Loading";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Scene = () => {
   const canvasDiv = useRef<HTMLDivElement | null>(null);
@@ -144,6 +149,28 @@ const Scene = () => {
       };
     }
   }, []);
+
+  useGSAP(() => {
+    gsap.to('.character-model', {
+      left: '75%', 
+      scrollTrigger: {
+        trigger: '#about',
+        start: 'top bottom',
+        end: 'top center',
+        scrub: 1,
+      }
+    });
+
+    gsap.to('.character-model', {
+      left: '50%', 
+      scrollTrigger: {
+        trigger: '.whatIDO',
+        start: 'top bottom',
+        end: 'top center',
+        scrub: 1,
+      }
+    });
+  });
 
   return (
     <>

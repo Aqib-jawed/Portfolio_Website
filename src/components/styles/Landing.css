@@ -244,6 +244,43 @@ h2.landing-info-h2 {
   top: 0;
   left: 0;
 }
+/* Hero Resume Download Button */
+.hero-resume-btn {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 50px;
+  background: rgba(170, 66, 255, 0.15);
+  border: 1px solid rgba(170, 66, 255, 0.3);
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+.hero-resume-btn:hover {
+  background: rgba(170, 66, 255, 0.3);
+  border-color: rgba(170, 66, 255, 0.6);
+  box-shadow: 0 0 30px rgba(170, 66, 255, 0.25);
+  transform: translateX(-50%) translateY(-3px);
+  color: #fff !important;
+}
+.hero-resume-icon {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
 @media screen and (min-width: 500px) {
   .landing-circle2 {
     display: block;
@@ -297,6 +334,9 @@ h2.landing-info-h2 {
     bottom: 0;
     z-index: 11;
     position: fixed;
+    width: 50vw;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .character-model::after,
   .character-model::before {

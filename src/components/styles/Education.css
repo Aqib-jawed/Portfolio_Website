@@ -1,0 +1,373 @@
+.education-section {
+  margin: auto;
+  padding: 120px 0px;
+  position: relative;
+}
+.education-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.education-section h2 {
+  font-size: 70px;
+  line-height: 70px;
+  font-weight: 400;
+  text-align: center;
+  background: linear-gradient(0deg, #7f40ff, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+.education-section h2 > span {
+  font-family: "Geist", sans-serif;
+  font-weight: 300;
+}
+.education-content {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.education-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 40px;
+  flex: 1;
+  min-width: 320px;
+  max-width: 600px;
+  backdrop-filter: blur(10px);
+  transition: border-color 0.4s, box-shadow 0.4s;
+}
+.education-card:hover {
+  border-color: rgba(194, 164, 255, 0.3);
+  box-shadow: 0 0 40px rgba(170, 66, 255, 0.08);
+}
+.education-card-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+.education-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #7f40ff, #aa42ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+  box-shadow: 0 0 20px rgba(170, 66, 255, 0.3);
+}
+.grade-card-icon {
+  background: linear-gradient(135deg, #e44d26, #f15a29);
+  box-shadow: 0 0 20px rgba(228, 77, 38, 0.35);
+}
+.education-header-text h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+.education-location {
+  font-size: 14px;
+  color: #999;
+  margin: 4px 0 0;
+}
+.education-card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.education-details {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.education-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: #ccc;
+}
+.education-detail-item svg {
+  color: var(--accentColor);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.education-cgpa-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.cgpa-gauge {
+  position: relative;
+  width: 110px;
+  height: 110px;
+}
+.cgpa-circle {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+.cgpa-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.06);
+  stroke-width: 8;
+}
+.cgpa-fill {
+  fill: none;
+  stroke: url(#cgpaGradient);
+  stroke: #aa42ff;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.5s ease-out;
+  filter: drop-shadow(0 0 8px rgba(170, 66, 255, 0.5));
+}
+.cgpa-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.cgpa-value {
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+}
+.cgpa-label {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+.cgpa-subtitle {
+  font-size: 13px;
+  color: var(--accentColor);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 0;
+}
+.education-coursework {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 24px;
+}
+.education-coursework h4 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--accentColor);
+  font-weight: 500;
+  margin: 0 0 16px;
+}
+.coursework-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.coursework-tag {
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  background: rgba(170, 66, 255, 0.1);
+  border: 1px solid rgba(170, 66, 255, 0.2);
+  color: #d4b5ff;
+  transition: all 0.3s;
+  cursor: default;
+}
+.coursework-tag:hover {
+  background: rgba(170, 66, 255, 0.2);
+  border-color: rgba(170, 66, 255, 0.4);
+  box-shadow: 0 0 15px rgba(170, 66, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ── Grade Card PDF Viewer ────────────────────────────────── */
+.grade-card-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.grade-card-preview {
+  flex: 1;
+  margin-bottom: 20px;
+}
+.grade-card-img-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(228, 77, 38, 0.05);
+  border: 1px solid rgba(228, 77, 38, 0.15);
+  aspect-ratio: 4/3;
+  cursor: pointer;
+}
+.grade-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.grade-card-img-wrap:hover .grade-card-img {
+  transform: scale(1.04);
+}
+
+/* Fallback shown when PDF can't render as <img> */
+.grade-card-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(228,77,38,0.08), rgba(241,90,41,0.04));
+}
+.grade-fallback-icon {
+  font-size: 60px;
+  color: #e44d26;
+  opacity: 0.7;
+  filter: drop-shadow(0 0 16px rgba(228,77,38,0.4));
+}
+.grade-card-fallback p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+.grade-card-fallback span {
+  font-size: 14px;
+  color: #e44d26;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+/* Hover overlay with View / Download buttons */
+.grade-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.grade-card-img-wrap:hover .grade-card-overlay {
+  opacity: 1;
+}
+.grade-card-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 24px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.25s, transform 0.25s;
+  transform: translateY(12px);
+  cursor: pointer;
+}
+.grade-card-img-wrap:hover .grade-card-action {
+  transform: translateY(0);
+  transition: background 0.25s, transform 0.4s ease;
+}
+.grade-card-action:nth-child(2) {
+  transition-delay: 0.05s;
+}
+.grade-card-action svg {
+  font-size: 22px;
+  color: #e44d26;
+}
+.grade-card-action:hover {
+  background: rgba(228, 77, 38, 0.2);
+  border-color: rgba(228, 77, 38, 0.4);
+}
+
+/* Footer badges */
+.grade-card-footer {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.grade-badge {
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  background: rgba(228, 77, 38, 0.1);
+  border: 1px solid rgba(228, 77, 38, 0.25);
+  color: #f17050;
+  letter-spacing: 0.5px;
+}
+.grade-badge-year {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #888;
+}
+
+@media only screen and (max-width: 1400px) {
+  .education-section h2 {
+    font-size: 50px;
+    line-height: 50px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .education-section {
+    padding: 70px 0px;
+  }
+  .education-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .education-card {
+    min-width: auto;
+    width: 100%;
+    padding: 28px;
+  }
+  .education-card-body {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .education-cgpa-section {
+    align-self: center;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .education-section h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-top: 0px;
+  }
+  .education-card {
+    padding: 20px;
+  }
+  .education-header-text h3 {
+    font-size: 20px;
+  }
+}

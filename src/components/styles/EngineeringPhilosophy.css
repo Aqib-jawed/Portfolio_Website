@@ -1,0 +1,77 @@
+.ep-section {
+  padding: 140px 0;
+  position: relative;
+  overflow: hidden;
+}
+.ep-container {
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+.ep-quote-mark {
+  font-size: 200px;
+  line-height: 0.6;
+  font-weight: 700;
+  background: linear-gradient(180deg, rgba(170, 66, 255, 0.3), transparent);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Georgia", serif;
+  margin-bottom: -20px;
+  user-select: none;
+}
+.ep-text {
+  font-size: 38px;
+  line-height: 1.5;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 900px;
+  margin: 0 auto 30px;
+  letter-spacing: 0.5px;
+}
+.ep-highlight {
+  color: var(--accentColor);
+  font-weight: 500;
+}
+.ep-subtext {
+  font-size: 18px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-weight: 400;
+}
+.ep-line {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accentColor), transparent);
+  margin: 50px auto 0;
+}
+
+@media only screen and (max-width: 1400px) {
+  .ep-text {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .ep-section {
+    padding: 80px 0;
+  }
+  .ep-text {
+    font-size: 24px;
+  }
+  .ep-quote-mark {
+    font-size: 120px;
+  }
+  .ep-subtext {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .ep-text {
+    font-size: 20px;
+  }
+  .ep-quote-mark {
+    font-size: 90px;
+  }
+}

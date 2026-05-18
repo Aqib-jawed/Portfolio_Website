@@ -8,6 +8,14 @@ import Navbar from "./Navbar";
 import SocialIcons from "./SocialIcons";
 import WhatIDo from "./WhatIDo";
 import Work from "./Work";
+import Education from "./Education";
+import Achievements from "./Achievements";
+import WhyHireMe from "./WhyHireMe";
+import EngineeringPhilosophy from "./EngineeringPhilosophy";
+import TechnicalSkills from "./TechnicalSkills";
+import CurrentlyExploring from "./CurrentlyExploring";
+import Leadership from "./Leadership";
+import BuildingInPublic from "./BuildingInPublic";
 import setSplitText from "./utils/splitText";
 
 const TechStack = lazy(() => import("./TechStack"));
@@ -40,7 +48,11 @@ const MainContainer = ({ children }: PropsWithChildren) => {
           <div className="container-main">
             <Landing>{!isDesktopView && children}</Landing>
             <About />
+            <WhyHireMe />
             <WhatIDo />
+            <EngineeringPhilosophy />
+            <Education />
+            <TechnicalSkills />
             <Career />
             <Work />
             {isDesktopView && (
@@ -48,6 +60,10 @@ const MainContainer = ({ children }: PropsWithChildren) => {
                 <TechStack />
               </Suspense>
             )}
+            <Achievements />
+            <Leadership />
+            <CurrentlyExploring />
+            <BuildingInPublic />
             <Contact />
           </div>
         </div>
