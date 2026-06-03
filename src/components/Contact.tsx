@@ -12,8 +12,8 @@ const socials = [
   {
     id: "github",
     label: "GitHub",
-    handle: "@Akki-Aqib",
-    url: "https://github.com/Akki-Aqib",
+    handle: "@Aqib-jawed",
+    url: "https://github.com/Aqib-jawed",
     icon: <FaGithub />,
     color: "#e0e0e0",
     glow: "rgba(224,224,224,0.18)",
@@ -34,7 +34,7 @@ const socials = [
   {
     id: "instagram",
     label: "Instagram",
-    handle: "@akki.jawed",
+    handle: "@aqib_jawed",
     url: "https://www.instagram.com/_.akki_07/",
     icon: <FaInstagram />,
     color: "#e1306c",
