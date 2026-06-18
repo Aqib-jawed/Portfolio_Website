@@ -1,4 +1,3 @@
-
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -17,18 +16,18 @@ const projects = [
       "Full-stack civic platform enabling real-time city issue reporting with RBAC, Row Level Security, optimized relational queries, and scalable database architecture.",
     image: "/images/project-civic.webp",
     link: "https://civic-connect-webapp.vercel.app/",
-    github: "https://github.com/Akki-Aqib/Civic-Connect",
+    github: "https://github.com/Aqib-jawed/Civic-Connect",
   },
   {
     num: "02",
-    name: "EduNet",
-    category: "AI Education Platform",
-    tools: "Next.js, OpenAI API, Python, FastAPI, Supabase, Tailwind CSS",
+    name: "Resume Radar",
+    category: "AI Resume Platform",
+    tools: "Next.js 14, TypeScript, Supabase, Prisma, Groq API, NextAuth",
     description:
-      "AI-powered educational platform integrating OpenAI APIs with FastAPI microservices for intelligent doubt resolution — SSR, async handling, and rate limiting.",
-    image: "/images/project-edunet.webp",
-    link: "https://progrex-campus.vercel.app/",
-    github: "https://github.com/Akki-Aqib/progrex-campus",
+      "AI-powered ATS intelligence platform scoring resumes against any job description with Groq's LLaMA 3.3-70B — Ghost Mode candidate profiling and AI-generated interview prep included.",
+    image: "/images/project-resumeradar.webp",
+    link: "https://resumeradar-evys.vercel.app/",
+    github: "https://github.com/Aqib-jawed/resumeradar",
   },
   {
     num: "03",
@@ -39,7 +38,40 @@ const projects = [
       "MERN-stack fintech dashboard with JWT auth, optimized MongoDB queries, and modular REST APIs for secure transaction tracking and financial visualization.",
     image: "/images/project-payment.webp",
     link: "https://smartpaymentdashboard.vercel.app/",
-    github: "https://github.com/Akki-Aqib/Smart-Payment-Dashboard",
+    github: "https://github.com/Aqib-jawed/Smart-Payment-Dashboard",
+  },
+  {
+    num: "04",
+    name: "AI Education Platform",
+    category: "LLM-Powered EdTech",
+    tools: "Next.js, OpenAI API, Python, FastAPI, Supabase, Tailwind CSS",
+    description:
+      "AI-powered educational platform integrating OpenAI APIs with FastAPI microservices for intelligent doubt resolution — SSR, async handling, and rate limiting.",
+    image: "/images/project-edunet.webp",
+    link: "https://progrex-campus.vercel.app/",
+    github: "https://github.com/Aqib-jawed/progrex-campus",
+  },
+  {
+    num: "05",
+    name: "Meta Forge",
+    category: "Developer SEO Tool",
+    tools: "Next.js 14, TypeScript, Tailwind CSS",
+    description:
+      "Zero-backend meta tag generator rendering real-time, pixel-accurate previews for Google, Twitter/X, and Facebook — live SEO character-limit tracking built in.",
+    image: "/images/project-metaforge.webp",
+    link: "https://metaforge-nine.vercel.app/",
+    github: "https://github.com/Aqib-jawed/metaforge",
+  },
+  {
+    num: "06",
+    name: "DevPulse AI",
+    category: "AI Code Intelligence",
+    tools: "Next.js 14, FastAPI, Pinecone, tree-sitter, Redis, BullMQ",
+    description:
+      "RAG-powered code intelligence platform answering natural-language questions over any GitHub repo with AST-aware chunking and hybrid retrieval at sub-400ms latency.",
+    image: "/images/project-devpulse.webp",
+    link: "https://dev-pulse-ai-web.vercel.app/",
+    github: "https://github.com/Aqib-jawed/DevPulse_AI",
   },
 ];
 
